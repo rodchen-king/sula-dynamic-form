@@ -1,6 +1,6 @@
 {
-  "name": "sula-dynamic-form",
-  "version": "0.0.5",
+  "name": "sula-dynamic-form1",
+  "version": "0.0.7",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -35,7 +35,7 @@
     "antd": "^4.2.5",
     "react": "^16.12.0",
     "sula": "^1.0.0-beta.11",
-    "sula-dynamic-form": "^0.0.5",
+    "sula-dynamic-form": "^0.0.7",
     "umi-plugin-sula": "^1.0.0-beta.1"
   },
   "peerdependencies": {

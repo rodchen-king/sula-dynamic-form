@@ -2,10 +2,11 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2020-11-03 16:23:14
- * @LastEditTime: 2020-11-04 15:32:36
+ * @LastEditTime: 2020-11-04 17:55:20
  * @LastEditors: rodchen
  */
 const extraBabelPlugins = [];
+
 extraBabelPlugins.push([
   'babel-plugin-import',
   {
@@ -16,7 +17,11 @@ extraBabelPlugins.push([
 ]);
 
 const config = {
-  esm: 'babel',
+  esm: {
+    type: 'babel',
+    minify: true,
+  },
+
   disableTypeCheck: true,
   preCommit: {
     eslint: true,
