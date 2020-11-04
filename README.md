@@ -1,6 +1,6 @@
 # sula-dynamic-form
 
-## <span style="font-size:18px; color: #4569d4">umi体系使用</span>
+## <span style="font-size:18px; color: #4569d4">umi 体系使用</span>
 
 ```bash
 $ cnpm i --save sula-dynamic-form@1.0.1
@@ -273,7 +273,14 @@ export default props => {
 };
 ```
 
-## <span style="font-size:18px; color: #4569d4">非umi体系使用</span>
+### <span style="font-size:16px; color: #EB2F96">属性</span>
+
+| 属性名   | 说明                                                                                   | 类型       |
+| -------- | -------------------------------------------------------------------------------------- | ---------- |
+| config   | sula form 的原有 config 配置                                                           | `object`   |
+| callback | 这里添加的保存按钮的回掉函数，用于将当前 form 的 config 配置数据回掉回来，用于数据操作 | `function` |
+
+## <span style="font-size:18px; color: #4569d4">非 umi 体系使用</span>
 
 `这里主要是处理umi-plugin-sula做的事情，做一些sula的初始化工作`
 
@@ -288,8 +295,8 @@ const DynamicForm = SulaDynamicFormFC();
 
 ## <span style="font-size:18px; color: #4569d4">后续工作</span>
 
-- [ ] 添加对应的渲染组件，用于动态创建的表单的业务渲染页面【传入对应mode以及操作的url】  
-- [ ] react的版本问题
+- [ ] 添加对应的渲染组件，用于动态创建的表单的业务渲染页面【传入对应 mode 以及操作的 url】
+- [ ] react 的版本问题
 
 ## <span style="font-size:18px; color: #4569d4">源码地址</span>
 
