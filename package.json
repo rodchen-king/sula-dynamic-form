@@ -1,0 +1,57 @@
+{
+  "name": "sula-dynamic-form",
+  "version": "0.0.2",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father-build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "release": "npm run build && npm publish",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "/dist/"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^3.6.3",
+    "@sula/nav": "1.0.0-alpha.2",
+    "antd": "^4.2.5",
+    "react": "^16.12.0",
+    "sula": "^1.0.0-beta.11",
+    "sula-dynamic-form": "^0.0.2",
+    "umi-plugin-sula": "^1.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-typescript": "^7.12.1",
+    "@sula/templates": "^1.0.3",
+    "@umijs/preset-react": "^1.5.19",
+    "@umijs/test": "^3.0.5",
+    "acorn": "^7.2.0",
+    "acorn-walk": "^7.1.1",
+    "ast-types": "^0.13.3",
+    "copy-to-clipboard": "^3.3.1",
+    "dumi": "^1.0.10",
+    "father-build": "^1.17.2",
+    "gh-pages": "^3.0.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "yorkie": "^2.0.0"
+  }
+}
