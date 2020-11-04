@@ -10,8 +10,9 @@ nav:
 
 ```tsx
 import React from 'react';
-import DynamicForm from './index';
+import Dynamic from 'sula-dynamic-form';
 // import { cardConfig as config } from '@sula/templates';
+console.log(Dynamic);
 
 const config = {
   mode: 'create',
@@ -270,7 +271,7 @@ export default props => {
     console.log(value);
   };
 
-  return <DynamicForm {...config} callback={callback} />;
+  return <Dynamic {...config} callback={callback} />;
 };
 ```
 
