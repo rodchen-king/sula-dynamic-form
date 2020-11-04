@@ -1,5 +1,7 @@
 # sula-dynamic-form
 
+[在线demo](https://rodchen-king.github.io/sula-register-components/#/dynamic_form/edit-table?anchor=umi-%E4%BD%93%E7%B3%BB%E4%BD%BF%E7%94%A8)
+
 ## <span style="font-size:18px; color: #4569d4">umi 体系使用</span>
 
 ```bash
