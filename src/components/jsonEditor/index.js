@@ -11,7 +11,7 @@ import {
 } from 'antd';
 import copy from 'copy-to-clipboard';
 import Editor, { monaco } from '@monaco-editor/react';
-import serialize, { deserialize } from '@/utils/serialize';
+import serialize, { deserialize } from '../../utils/serialize';
 import {
   BulbOutlined,
   PlayCircleOutlined,
@@ -23,7 +23,7 @@ import {
 import validateSulaConfig from './lint';
 import * as acorn from 'acorn';
 import * as walk from 'acorn-walk';
-import ConfigTree, { iconRender, nameRender } from '@/components/configTree';
+import ConfigTree, { iconRender, nameRender } from '../configTree';
 import registerSuggestions from './suggestions';
 import style from './index.less';
 

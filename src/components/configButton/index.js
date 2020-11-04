@@ -1,8 +1,15 @@
+/*
+ * @Description:
+ * @Author: rodchen
+ * @Date: 2020-11-04 16:42:58
+ * @LastEditTime: 2020-11-04 19:23:52
+ * @LastEditors: rodchen
+ */
 import React from 'react';
 import { Affix, Button } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
-import ThemeContext from '@/layout/themeContext';
-import { Guide } from '@/components/guide';
+import ThemeContext from '../../layout/themeContext';
+import { Guide } from '../guide';
 
 export default props => {
   const { onClick } = props;

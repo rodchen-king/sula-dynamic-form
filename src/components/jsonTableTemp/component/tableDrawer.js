@@ -1,9 +1,15 @@
+/*
+ * @Description:
+ * @Author: rodchen
+ * @Date: 2020-11-04 16:42:58
+ * @LastEditTime: 2020-11-04 20:08:25
+ * @LastEditors: rodchen
+ */
 import React, { useState } from 'react';
 import { message } from 'antd';
-import Drawer from '@/components/drawer';
-import ConfigButton from '@/components/configButton';
-import StyleSelect from '@/components/styleSelect';
-import Editor from '@/components/jsonEditor';
+import Drawer from '../../drawer';
+import ConfigButton from '../../configButton';
+import Editor from '../../jsonEditor';
 
 const tableStyleList = [
   {
@@ -73,13 +79,7 @@ export default React.memo(props => {
   return (
     <div>
       <Drawer visible={visible} width={width} onClose={onClose}>
-        <div ref={styleRef}>
-          <StyleSelect
-            style={{ paddingBottom: 24 }}
-            data={tableStyleList}
-            title="列表风格设置"
-          />
-        </div>
+        <div ref={styleRef}></div>
 
         <Editor
           type="table"

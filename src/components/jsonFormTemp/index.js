@@ -3,10 +3,10 @@ import { CreateForm, StepForm } from 'sula';
 import { merge, set, unset, get } from 'lodash';
 import { triggerRenderPlugin } from 'sula/es/rope/triggerPlugin';
 import { Button } from 'antd';
-import getFormMode from '@/utils/getFormMode';
+import getFormMode from '../../utils/getFormMode';
 import FormDrawer from './component/formDrawer';
-import ControlDrawer from '@/components/jsonEditorDrawer';
-import TipsWrapper from '@/components/tipsWrapper';
+import ControlDrawer from '../jsonEditorDrawer';
+import TipsWrapper from '../tipsWrapper';
 
 export default props => {
   const {

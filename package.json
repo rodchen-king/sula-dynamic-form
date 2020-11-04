@@ -1,6 +1,6 @@
 {
-  "name": "sula-dynamic-form1",
-  "version": "0.0.7",
+  "name": "sula-dynamic-form",
+  "version": "1.0.1",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -11,6 +11,10 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodchen-king/sula-dynamic-form.git"
   },
   "main": "es/index.js",
   "module": "es/index.esm.js",
@@ -35,8 +39,9 @@
     "antd": "^4.2.5",
     "react": "^16.12.0",
     "sula": "^1.0.0-beta.11",
-    "sula-dynamic-form": "^0.0.7",
-    "umi-plugin-sula": "^1.0.0-beta.1"
+    "sula-dynamic-form": "^1.0.1",
+    "umi-plugin-sula": "^1.0.0-beta.1",
+    "ast-types": "^0.13.3"
   },
   "peerdependencies": {
     "@monaco-editor/react": "^3.6.3",
@@ -44,7 +49,8 @@
     "antd": "^4.2.5",
     "react": "^16.12.0",
     "sula": "^1.0.0-beta.11",
-    "umi-plugin-sula": "^1.0.0-beta.1"
+    "umi-plugin-sula": "^1.0.0-beta.1",
+    "ast-types": "^0.13.3"
   },
   "devDependencies": {
     "@babel/plugin-transform-typescript": "^7.12.1",

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import style from './index.less';
 import { Space, Button, Popover } from 'antd';
-import ThemeContext, { GUIDE, DONE } from '@/layout/themeContext';
+import ThemeContext, { GUIDE, DONE } from '../../layout/themeContext';
 
 function getElementLeft(element) {
   let actualLeft = element.offsetLeft;

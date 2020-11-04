@@ -12,10 +12,10 @@ import {
   unset,
 } from 'lodash';
 import TableDrawer from './component/tableDrawer';
-import ControlJsonDrawer from '@/components/jsonEditorDrawer';
-import TipsWrapper from '@/components/tipsWrapper';
+import ControlJsonDrawer from '../jsonEditorDrawer';
+import TipsWrapper from '../tipsWrapper';
 import { triggerRenderPlugin } from 'sula/es/rope/triggerPlugin';
-import { Guide } from '@/components/guide';
+import { Guide } from '../guide';
 
 export default props => {
   const [tableDrawerVisible, setTableDrawerVisible] = useState(false);

@@ -1,7 +1,14 @@
+/*
+ * @Description:
+ * @Author: rodchen
+ * @Date: 2020-11-04 16:42:58
+ * @LastEditTime: 2020-11-04 19:27:04
+ * @LastEditors: rodchen
+ */
 import React from 'react';
-import Drawer from '@/components/drawer';
-import JsonEditor from '@/components/jsonEditor';
-import PluginTree from '@/components/pluginTree';
+import Drawer from '../drawer';
+import JsonEditor from '../jsonEditor';
+import PluginTree from '../pluginTree';
 
 export default props => {
   const { visible, onClose, value, onRun, clickType } = props;

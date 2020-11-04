@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Typography, message, Radio, Space } from 'antd';
-import ConfigButton from '@/components/configButton';
-import Drawer from '@/components/drawer';
-import Editor from '@/components/jsonEditor';
-import StyleSelect from '@/components/styleSelect';
+import ConfigButton from '../../configButton';
+import Drawer from '../../drawer';
+import Editor from '../../jsonEditor';
 
 const { Title } = Typography;
 
@@ -41,7 +40,6 @@ const formStyleLists = [
 ];
 
 export default props => {
-  debugger;
   const {
     width = 600,
     id,
@@ -118,15 +116,7 @@ export default props => {
               </div>
             )}
 
-            {/* <StyleSelect
-              key={mode}
-              mode={mode}
-              title="表单风格设置"
-              data={formStyleLists}
-              id={id}
-            />
-
-            {isWizard && (
+            {/*{isWizard && (
               <div>
                 <Title level={4}>分布表单方向</Title>
                 <Radio.Group
