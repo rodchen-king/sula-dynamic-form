@@ -37,7 +37,12 @@ export default props => {
 
   function deleteItem(path) {
     const finalCode = { ...code };
-    unset(finalCode, path);
+    if (Array.isArray(path) && path.length && path[0] === 'actionsRender') {
+      unset(finalCode.actionsRender, [mode, path[1]]);
+    } else {
+      unset(finalCode, path);
+    }
+
     setCode(finalCode);
     setKey(key + 1);
   }
@@ -45,7 +50,16 @@ export default props => {
   function addItem(name, path, position = 'left') {
     let finalCode = { ...code };
     const nodePath = path.slice(0, -1);
-    const node = get(finalCode, nodePath);
+    let node;
+    if (
+      Array.isArray(nodePath) &&
+      nodePath.length &&
+      nodePath[0] === 'actionsRender'
+    ) {
+      node = code.actionsRender[mode];
+    } else {
+      node = get(finalCode, nodePath);
+    }
     const idx = node.length + 1;
 
     let defaultCode;
@@ -70,13 +84,24 @@ export default props => {
       default:
         return;
     }
-
     node.splice(
       position === 'left' ? path[path.length - 1] : path[path.length - 1] + 1,
       0,
       defaultCode,
     );
-    finalCode = set(finalCode, nodePath, node);
+
+    if (
+      Array.isArray(nodePath) &&
+      nodePath.length &&
+      nodePath[0] === 'actionsRender'
+    ) {
+      const actionflag = Object.assign([], nodePath);
+      actionflag[0] = mode;
+      const actionNewVal = set({ ...code.actionsRender }, actionflag, node);
+      finalCode = set(finalCode, nodePath, actionNewVal);
+    } else {
+      finalCode = set(finalCode, nodePath, node);
+    }
 
     setCode(finalCode);
     setKey(key + 1);
@@ -177,7 +202,16 @@ export default props => {
     const newVal = oldName ? { name: oldName, ...restVal } : val;
 
     let finalCode = { ...code };
-    finalCode = set(finalCode, flag, newVal);
+    if (Array.isArray(flag) && flag.length && flag[0] === 'actionsRender') {
+      const actionflag = Object.assign([], flag);
+      actionflag[0] = mode;
+      const actionNewVal = set({ ...code.actionsRender }, actionflag, newVal);
+      finalCode = set(finalCode, flag, actionNewVal);
+      debugger;
+    } else {
+      finalCode = set(finalCode, flag, newVal);
+    }
+
     setCode(finalCode);
 
     setVisible(false);
@@ -186,6 +220,7 @@ export default props => {
 
   const onModeChange = mode => {
     setMode(mode);
+    setCode({ ...code, mode: mode });
     setFormDrawerVisible(false);
     setKey(key + 1);
   };
@@ -203,6 +238,13 @@ export default props => {
   };
 
   const onControlTipClick = (data, namePath) => {
+    if (
+      Array.isArray(namePath) &&
+      namePath.length &&
+      namePath[0] === 'actionsRender'
+    ) {
+      data = code.actionsRender[mode][namePath[1]];
+    }
     setControlValue(data);
     setFlag(namePath);
     setVisible(true);
@@ -243,7 +285,7 @@ export default props => {
     if (!actionsRender) return data;
     return {
       ...restProps,
-      actionsRender: getClickItem(actionsRender, 'actionsRender'),
+      actionsRender: getClickItem(actionsRender[mode] || [], 'actionsRender'),
     };
   };
 
@@ -299,4 +341,8 @@ export default props => {
       />
     </div>
   );
+};
+
+const filterAction = (code, mode) => {
+  return { ...code, actionsRender: code.actionsRender[mode] };
 };

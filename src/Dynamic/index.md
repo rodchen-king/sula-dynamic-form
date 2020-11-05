@@ -109,7 +109,7 @@ const config = {
       },
       remoteSource: {
         url:
-          'https://www.easy-mock.com/mock/5f9e6df90bf9ee0300940a04/api/manage/recipientList',
+          'https://www.fastmock.site/mock/c34b6d8a0f17200eb13d75100bed05c5/sula-demo/api/manage/recipientList',
       },
       rules: [
         {
@@ -217,46 +217,69 @@ const config = {
       },
     },
   ],
-  actionsRender: [
-    {
-      type: 'button',
-      props: {
-        type: 'primary',
-        children: '提交',
-      },
-      action: [
-        {
-          url: 'https://www.mocky.io/v2/5ed7a8b63200001ad9274ab5',
-          method: 'POST',
-          params: ctx => {
-            console.log(ctx, ctx.result, 'ctx');
-            return { ...(ctx.result || {}) };
-          },
+  actionsRender: {
+    create: [
+      {
+        type: 'button',
+        props: {
+          type: 'primary',
+          children: '提交',
         },
-      ],
-    },
-    {
-      type: 'button',
-      props: {
-        type: 'primary',
-        children: 'validateFields提交',
-      },
-      action: [
-        'validateFields',
-        {
-          url: 'https://www.mocky.io/v2/5ed7a8b63200001ad9274ab5',
-          method: 'POST',
-          params: ctx => {
-            console.log(ctx, ctx.result, 'validateFields ctx');
-            return { ...(ctx.result || {}) };
+        action: [
+          'validateFields',
+          {
+            url: 'https://www.mocky.io/v2/5ed7a8b63200001ad9274ab5',
+            method: 'POST',
           },
+        ],
+      },
+      {
+        type: 'button',
+        props: {
+          type: 'primary',
+          children: '返回',
         },
-      ],
-    },
-  ],
+        action: 'back',
+      },
+    ],
+    edit: [
+      {
+        type: 'button',
+        props: {
+          type: 'primary',
+          children: '更新',
+        },
+        action: [
+          'validateFields',
+          {
+            url: 'https://www.mocky.io/v2/5ed7a8b63200001ad9274ab5',
+            method: 'POST',
+          },
+        ],
+      },
+      {
+        type: 'button',
+        props: {
+          type: 'primary',
+          children: '返回',
+        },
+        action: 'back',
+      },
+    ],
+    view: [
+      {
+        type: 'button',
+        props: {
+          type: 'primary',
+          children: '返回',
+        },
+        action: 'back',
+      },
+    ],
+  },
   remoteValues: {
     url:
-      'https://www.easy-mock.com/mock/5f9e6df90bf9ee0300940a04/api/manage/detail',
+      'https://www.fastmock.site/mock/c34b6d8a0f17200eb13d75100bed05c5/sula-demo/api/manage/detail',
     method: 'post',
     params: {
       id: 19,

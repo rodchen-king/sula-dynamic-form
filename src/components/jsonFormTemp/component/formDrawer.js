@@ -49,7 +49,7 @@ export default props => {
     onRun,
     code: defaultCode,
     iconVisible,
-    mode = 'create',
+    mode,
     changeMode,
     direction,
     isWizard,
@@ -57,6 +57,7 @@ export default props => {
     actionsPosition,
     changeActionsPosition,
   } = props;
+
   const [code, setCode] = useState(defaultCode);
   const [isDetail, setIsDetail] = useState(false);
   const styleRef = React.useRef(null);
@@ -152,8 +153,8 @@ export default props => {
           onRun={onClickRun}
           shallowHeight={height}
           value={{
-            mode,
             ...code,
+            mode,
             ...(!isWizard && actionsPosition ? { actionsPosition } : {}),
             ...(isWizard ? { direction } : {}),
           }}
